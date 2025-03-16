@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Global Logistics Solutions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#e28743',
+secondary: '#2B4C7E'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.service-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 1000;
+}
+.service-modal.active {
+display: flex;
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-6">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-700 hover:text-primary">Home</a>
+<a href="https://readdy.ai/home/16cc6063-a4e9-46bd-b04f-2e9baa10e5b9/8c1e0784-6b94-4020-abfa-ad42c42fab5d" data-readdy="true" class="text-gray-700 hover:text-primary">About Us</a>
+<a href="#" class="text-primary font-medium">Services</a>
+<a href="#" class="text-gray-700 hover:text-primary">Fleet</a>
+<a href="#" class="text-gray-700 hover:text-primary">Testimonials</a>
+<a href="#" class="text-gray-700 hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap cursor-pointer">Get a Quote</button>
+</div>
+<div class="md:hidden">
+<button class="text-gray-700 hover:text-primary">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="pt-20">
+<div class="relative h-[500px] bg-cover bg-center" style="background-image: url('https://public.readdy.ai/ai/img_res/2e6309778cc236998d6bf82dd2805884.jpg')">
+<div class="absolute inset-0 bg-black/50"></div>
+<div class="container mx-auto px-6 relative h-full flex items-center">
+<div class="max-w-3xl text-white">
+<h1 class="text-5xl font-bold mb-6">Our Services</h1>
+<p class="text-xl">Comprehensive logistics solutions tailored to your business needs. From international shipping to last-mile delivery, we've got you covered.</p>
+<button class="mt-8 bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 cursor-pointer">Get Started</button>
+</div>
+</div>
+</div>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer service-card" data-service="shipping">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-ship-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">International Shipping</h3>
+<p class="text-gray-600 mb-6">Global reach with reliable and efficient shipping solutions across sea, air, and land.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Door-to-door delivery</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Real-time tracking</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Customs clearance</li>
+</ul>
+<button class="text-primary hover:text-primary/80 font-medium">Learn More →</button>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer service-card" data-service="warehousing">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-store-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Warehousing Solutions</h3>
+<p class="text-gray-600 mb-6">State-of-the-art facilities with advanced inventory management systems.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Climate control</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>24/7 security</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Inventory tracking</li>
+</ul>
+<button class="text-primary hover:text-primary/80 font-medium">Learn More →</button>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer service-card" data-service="supply-chain">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-flow-chart text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Supply Chain Management</h3>
+<p class="text-gray-600 mb-6">End-to-end supply chain solutions with advanced analytics and optimization.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Demand forecasting</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Route optimization</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Risk management</li>
+</ul>
+<button class="text-primary hover:text-primary/80 font-medium">Learn More →</button>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer service-card" data-service="last-mile">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-truck-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Last-Mile Delivery</h3>
+<p class="text-gray-600 mb-6">Fast and reliable local delivery services with real-time tracking.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Same-day delivery</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Live tracking</li>
+<li class="flex items-center text-gray-600"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Proof of delivery</li>
+</ul>
+<button class="text-primary hover:text-primary/80 font-medium">Learn More →</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-16">Success Stories</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/377cb165a6cf96f91309a85087a11259.jpg" alt="Case Study 1" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-4">Global E-commerce Giant</h3>
+<p class="text-gray-600 mb-4">Reduced delivery times by 40% through optimized last-mile operations.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-medium">Read Case Study</span>
+<i class="ri-arrow-right-line text-primary"></i>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/6170807e2de8f10b4fcbebceb5bb62c5.jpg" alt="Case Study 2" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-4">Manufacturing Leader</h3>
+<p class="text-gray-600 mb-4">Achieved 30% cost reduction in supply chain operations.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-medium">Read Case Study</span>
+<i class="ri-arrow-right-line text-primary"></i>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/e2ad3489e82ca344b16a18861cdc0150.jpg" alt="Case Study 3" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-4">Retail Chain</h3>
+<p class="text-gray-600 mb-4">Improved inventory accuracy to 99.9% with our solutions.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-medium">Read Case Study</span>
+<i class="ri-arrow-right-line text-primary"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-16">Request a Service</h2>
+<div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+<form id="serviceRequestForm" class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 font-medium mb-2">Full Name</label>
+<input type="text" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">Company Name</label>
+<input type="text" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">Email</label>
+<input type="email" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">Phone</label>
+<input type="tel" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary" required>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">Service Type</label>
+<div class="relative">
+<select class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary appearance-none pr-8" required>
+<option value="">Select a service</option>
+<option value="international">International Shipping</option>
+<option value="warehousing">Warehousing</option>
+<option value="supply-chain">Supply Chain Management</option>
+<option value="last-mile">Last-Mile Delivery</option>
+</select>
+<i class="ri-arrow-down-s-line absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">Project Requirements</label>
+<textarea class="w-full px-4 py-2 border rounded focus:outline-none focus:border-primary h-32" required></textarea>
+</div>
+<div class="text-center">
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 cursor-pointer">Submit Request</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<h4 class="text-xl font-bold mb-4">About Us</h4>
+<p class="text-gray-400">Global leader in transportation and logistics services, delivering excellence since 1995.</p>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Fleet</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Service Areas</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">North America</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Europe</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Asia Pacific</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Middle East</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Newsletter</h4>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and insights.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-900">
+<button type="submit" class="bg-primary px-4 py-2 rounded-r hover:bg-primary/90">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400">© 2025 Global Logistics. All rights reserved.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 hover:text-white"><i class="ri-facebook-fill"></i></a>
+<a href="#" class="text-gray-400 hover:text-white"><i class="ri-twitter-fill"></i></a>
+<a href="#" class="text-gray-400 hover:text-white"><i class="ri-linkedin-fill"></i></a>
+<a href="#" class="text-gray-400 hover:text-white"><i class="ri-instagram-fill"></i></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+const mobileMenuButton = document.querySelector('.md\\:hidden button');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'md:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="p-6">
+<div class="flex justify-end mb-8">
+<button class="text-gray-700 hover:text-primary">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="flex flex-col space-y-4">
+<a href="#" class="text-gray-700 hover:text-primary">Home</a>
+<a href="https://readdy.ai/home/16cc6063-a4e9-46bd-b04f-2e9baa10e5b9/8c1e0784-6b94-4020-abfa-ad42c42fab5d" data-readdy="true" class="text-gray-700 hover:text-primary">About Us</a>
+<a href="#" class="text-primary font-medium">Services</a>
+<a href="#" class="text-gray-700 hover:text-primary">Fleet</a>
+<a href="#" class="text-gray-700 hover:text-primary">Testimonials</a>
+<a href="#" class="text-gray-700 hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap cursor-pointer">Get a Quote</button>
+</div>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+mobileMenuButton.addEventListener('click', () => {
+mobileMenu.classList.toggle('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', () => {
+mobileMenu.classList.add('translate-x-full');
+});
+document.getElementById('serviceRequestForm').addEventListener('submit', (e) => {
+e.preventDefault();
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+successModal.innerHTML = `
+<div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+<h3 class="text-2xl font-bold mb-4">Request Submitted</h3>
+<p class="text-gray-600 mb-6">Thank you for your service request. Our team will contact you within 24 hours.</p>
+<button class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90">Close</button>
+</div>
+`;
+document.body.appendChild(successModal);
+successModal.querySelector('button').addEventListener('click', () => {
+successModal.remove();
+});
+});
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+card.addEventListener('click', () => {
+const service = card.getAttribute('data-service');
+const modal = document.createElement('div');
+modal.className = 'service-modal active flex items-center justify-center';
+modal.innerHTML = `
+<div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4 relative">
+<button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+<h3 class="text-2xl font-bold mb-4">${card.querySelector('h3').textContent}</h3>
+<p class="text-gray-600 mb-6">${card.querySelector('p').textContent}</p>
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<h4 class="font-bold mb-4">Features</h4>
+${card.querySelector('ul').outerHTML}
+</div>
+<div>
+<h4 class="font-bold mb-4">Benefits</h4>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>Cost-effective solutions
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>Time-saving operations
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>Enhanced efficiency
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90">Request Service</button>
+</div>
+</div>
+`;
+document.body.appendChild(modal);
+modal.querySelector('button').addEventListener('click', () => {
+modal.remove();
+});
+});
+});
+</script>
+</body>
+</html>
