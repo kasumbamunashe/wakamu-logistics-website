@@ -1,288 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wakamu Logistics - Fleet</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#e79b23',
-        secondary: '#1a4d6e'
-      },
-      borderRadius: {
-        'none': '0px',
-        'sm': '4px',
-        DEFAULT: '8px',
-        'md': '12px',
-        'lg': '16px',
-        'xl': '20px',
-        '2xl': '24px',
-        '3xl': '32px',
-        'full': '9999px',
-        'button': '8px'
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wakamu Logistics - Your trusted partner in comprehensive logistics and supply chain solutions.">
+  <meta name="keywords" content="logistics, freight, warehousing, transportation, customs clearance">
+  <meta name="author" content="Wakamu Logistics">
+  <title>Wakamu Logistics - Fleet</title>
+  <link rel="icon" type="image/png" href="https://public.readdy.ai/ai/img_res/16e2c6ae6ee8ecc6b2b43046829b3e11.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#e79b23', // Orange
+            secondary: '#1a4d6e', // Dark Blue
+            gradientStart: '#FF6B6B', // Gradient Start
+            gradientEnd: '#3B82F6', // Gradient End
+            light: '#f8f9fa', // Light background
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          },
+          boxShadow: {
+            'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          }
+        }
       }
     }
-  }
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-.testimonial-slider {
-  transition: transform 0.5s ease-in-out;
-}
-.nav-link.active {
-  color: white;
-  border-bottom: 2px solid white;
-}
-.mobile-menu {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.mobile-menu.open {
-  display: block;
-  opacity: 1;
-}
-</style>
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--tw-gradient-stops));
+    }
+    .nav-link.active {
+      color: white;
+      border-bottom: 2px solid white;
+    }
+    .mobile-menu {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      display: block;
+      opacity: 1;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
-<body class="bg-white">
-<nav class="fixed top-0 w-full bg-primary z-50">
-  <div class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
-      <div class="text-white text-2xl font-['Pacifico']">Wakamu Logistics</div>
-      <div class="hidden md:flex space-x-8">
-        <a href="wakamu.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">About Us</a>
-        <a href="service.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Services</a>
-        <a href="fleet.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Fleet</a>
-        <a href="#testimonials" class="nav-link text-white hover:text-gray-200 cursor-pointer">Testimonials</a>
-        <a href="#contact" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
-      </div>
-      <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
-        <i class="ri-menu-line text-white text-2xl"></i>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu mt-4" id="mobile-menu">
-      <div class="flex flex-col space-y-4">
-        <a href="index.html" class="text-white hover:text-gray-200">Home</a>
-        <a href="about.html" class="text-white hover:text-gray-200">About Us</a>
-        <a href="service.html" class="text-white hover:text-gray-200">Services</a>
-        <a href="fleet.html" class="text-white hover:text-gray-200">Fleet</a>
-        <a href="#testimonials" class="text-white hover:text-gray-200">Testimonials</a>
-        <a href="#contact" class="text-white hover:text-gray-200">Contact</a>
-      </div>
-    </div>
+<body class="bg-light">
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-primary"></div>
   </div>
-</nav>
 
-<!-- Hero Section -->
-<section id="fleet-hero" class="pt-16 relative min-h-screen flex items-center" style="background-image: url('https://public.readdy.ai/ai/img_res/16e2c6ae6ee8ecc6b2b43046829b3e11.jpg'); background-size: cover; background-position: center;">
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-3xl text-white">
-      <h1 class="text-5xl font-bold mb-6">Our Fleet</h1>
-      <p class="text-xl mb-8">Explore our diverse fleet of vehicles and equipment designed to meet your logistics needs.</p>
-      <button class="bg-white text-primary px-8 py-3 rounded-button font-semibold hover:bg-gray-100 transition duration-300 cursor-pointer">Check Availability</button>
-    </div>
-  </div>
-</section>
-
-<!-- Fleet Categories Section -->
-<section id="fleet-categories" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Fleet Categories</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <img src="https://public.readdy.ai/ai/img_res/8f7ff9f2dd23c84942a326b23edcc5ed.jpg" alt="Road Tractors" class="w-full h-48 object-cover mb-6">
-        <h3 class="text-xl font-semibold mb-4">Road Tractors</h3>
-        <p class="text-gray-600 mb-4">Fleet Size: 500+ Trucks</p>
-        <p class="text-gray-600 mb-4">Coverage: Nationwide</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <img src="https://public.readdy.ai/ai/img_res/e22560fcb0385d7b3395987beb739bae.jpg" alt="Heavy Duty Trucks" class="w-full h-48 object-cover mb-6">
-        <h3 class="text-xl font-semibold mb-4">Heavy Duty Trucks</h3>
-        <p class="text-gray-600 mb-4">Fleet Size: 200+ Trucks</p>
-        <p class="text-gray-600 mb-4">Coverage: Regional</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <img src="https://public.readdy.ai/ai/img_res/46820b3702f2fd508fdaecbd7e9fd848.jpg" alt="Specialized Vehicles" class="w-full h-48 object-cover mb-6">
-        <h3 class="text-xl font-semibold mb-4">Specialized Vehicles</h3>
-        <p class="text-gray-600 mb-4">Fleet Size: 50+ Vehicles</p>
-        <p class="text-gray-600 mb-4">Coverage: Custom Solutions</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fleet Tracking Section -->
-<section id="fleet-tracking" class="py-20">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Fleet Tracking System</h2>
-    <div class="bg-white p-8 rounded-lg shadow-lg">
-      <div class="relative h-[500px] bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')">
-        <div class="absolute inset-0 bg-black/20"></div>
-      </div>
-      <div class="mt-8">
-        <h3 class="text-xl font-bold mb-4">Real-Time Fleet Tracking</h3>
-        <p class="text-gray-600">Track your shipments in real-time with our advanced GPS tracking system.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fleet Specifications Section -->
-<section id="fleet-specifications" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Vehicle Specifications</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-semibold mb-4">Road Tractors</h3>
-        <p class="text-gray-600 mb-4">Capacity: Up to 44,666 lbs</p>
-        <p class="text-gray-600 mb-4">Fuel Type: Diesel</p>
-        <p class="text-gray-600 mb-4">Safety Features: ABS, Lane Assist</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-semibold mb-4">Heavy Duty Trucks</h3>
-        <p class="text-gray-600 mb-4">Capacity: Up to 26,000 lbs</p>
-        <p class="text-gray-600 mb-4">Fuel Efficiency: 8 MPG</p>
-        <p class="text-gray-600 mb-4">Safety Features: Advanced Navigation Systems</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-semibold mb-4">Specialized Vehicles</h3>
-        <p class="text-gray-600 mb-4">Capacity: Custom Solutions</p>
-        <p class="text-gray-600 mb-4">Fuel Efficiency: Varies</p>
-        <p class="text-gray-600 mb-4">Safety Features: Custom Safety Systems</p>
-        <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fleet Management Features Section -->
-<section id="fleet-management" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Fleet Management Features</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <div class="w-16 h-16 flex items-center justify-center mb-6">
-          <i class="ri-map-pin-line text-4xl text-primary"></i>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-primary z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="text-white text-2xl font-bold">Wakamu Logistics</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Home</a>
+          <a href="about.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">About Us</a>
+          <a href="service.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Services</a>
+          <a href="fleet.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Fleet</a>
+          <a href="#testimonials" class="nav-link text-white hover:text-gray-200 cursor-pointer">Testimonials</a>
+          <a href="#contact" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
         </div>
-        <h3 class="text-xl font-semibold mb-4">GPS Tracking</h3>
-        <p class="text-gray-600">Real-time tracking of all vehicles in the fleet.</p>
+        <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i class="ri-menu-line text-white text-2xl"></i>
+        </button>
       </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <div class="w-16 h-16 flex items-center justify-center mb-6">
-          <i class="ri-route-line text-4xl text-primary"></i>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu mt-4" id="mobile-menu">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-white hover:text-gray-200">Home</a>
+          <a href="about.html" class="text-white hover:text-gray-200">About Us</a>
+          <a href="service.html" class="text-white hover:text-gray-200">Services</a>
+          <a href="fleet.html" class="text-white hover:text-gray-200">Fleet</a>
+          <a href="#testimonials" class="text-white hover:text-gray-200">Testimonials</a>
+          <a href="#contact" class="text-white hover:text-gray-200">Contact</a>
         </div>
-        <h3 class="text-xl font-semibold mb-4">Route Optimization</h3>
-        <p class="text-gray-600">Optimize routes for efficiency and cost savings.</p>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <div class="w-16 h-16 flex items-center justify-center mb-6">
-          <i class="ri-tools-line text-4xl text-primary"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-4">Maintenance Scheduling</h3>
-        <p class="text-gray-600">Schedule and track maintenance for all vehicles.</p>
-      </div>
-      <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition duration-300">
-        <div class="w-16 h-16 flex items-center justify-center mb-6">
-          <i class="ri-bar-chart-line text-4xl text-primary"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-4">Performance Analytics</h3>
-        <p class="text-gray-600">Analyze fleet performance and identify areas for improvement.</p>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Footer Section -->
-<footer class="bg-secondary text-white py-12">
-  <div class="container mx-auto px-6">
-    <div class="grid md:grid-cols-3 gap-12">
-      <div>
-        <h3 class="text-xl font-semibold mb-6">About Us</h3>
-        <p class="text-gray-300">Wakamu Logistics is a leading provider of comprehensive logistics and supply chain solutions, dedicated to efficiently managing the intricacies of transportation and distribution for businesses across diverse industries.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
-        <ul class="space-y-3">
-          <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
-          <li><a href="#fleet" class="text-gray-300 hover:text-white">Fleet</a></li>
-          <li><a href="#testimonials" class="text-gray-300 hover:text-white">Testimonials</a></li>
-          <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-6">Newsletter</h3>
-        <p class="text-gray-300 mb-4">Subscribe to our newsletter for updates and news.</p>
-        <form class="flex">
-          <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l focus:outline-none text-gray-800 w-full">
-          <button type="submit" class="bg-primary px-6 py-2 rounded-r text-white hover:bg-primary/90 transition duration-300">Subscribe</button>
-        </form>
+  <!-- Hero Section -->
+  <section id="fleet-hero" class="pt-16 relative min-h-screen flex items-center gradient-bg from-gradientStart to-gradientEnd">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-3xl text-white text-center" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Fleet</h1>
+        <p class="text-lg md:text-xl mb-8">Explore our diverse fleet of vehicles and equipment designed to meet your logistics needs.</p>
       </div>
     </div>
-    <div class="border-t border-gray-600 mt-12 pt-8 text-center">
-      <p class="text-gray-300">&copy; 2025 Wakamu Logistics. All rights reserved.</p>
+  </section>
+
+  <!-- Fleet Categories Section -->
+  <section id="fleet-categories" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Fleet Categories</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://public.readdy.ai/ai/img_res/8f7ff9f2dd23c84942a326b23edcc5ed.jpg" alt="Road Tractors" class="w-full h-48 object-cover mb-6">
+          <h3 class="text-xl font-semibold mb-4">Road Tractors</h3>
+          <p class="text-gray-600 mb-4">Fleet Size: 500+ Trucks</p>
+          <p class="text-gray-600 mb-4">Coverage: Nationwide</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://public.readdy.ai/ai/img_res/e22560fcb0385d7b3395987beb739bae.jpg" alt="Heavy Duty Trucks" class="w-full h-48 object-cover mb-6">
+          <h3 class="text-xl font-semibold mb-4">Heavy Duty Trucks</h3>
+          <p class="text-gray-600 mb-4">Fleet Size: 200+ Trucks</p>
+          <p class="text-gray-600 mb-4">Coverage: Regional</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://public.readdy.ai/ai/img_res/46820b3702f2fd508fdaecbd7e9fd848.jpg" alt="Specialized Vehicles" class="w-full h-48 object-cover mb-6">
+          <h3 class="text-xl font-semibold mb-4">Specialized Vehicles</h3>
+          <p class="text-gray-600 mb-4">Fleet Size: 50+ Vehicles</p>
+          <p class="text-gray-600 mb-4">Coverage: Custom Solutions</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- Mobile Menu Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  <!-- Fleet Tracking Section -->
+  <section id="fleet-tracking" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Fleet Tracking System</h2>
+      <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative h-[500px] bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')">
+          <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div class="mt-8">
+          <h3 class="text-xl font-bold mb-4">Real-Time Fleet Tracking</h3>
+          <p class="text-gray-600">Track your shipments in real-time with our advanced GPS tracking system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Toggle mobile menu visibility
-  mobileMenuButton.addEventListener('click', function() {
-    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-    mobileMenu.classList.toggle('open');
-  });
+  <!-- Fleet Specifications Section -->
+  <section id="fleet-specifications" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Vehicle Specifications</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-4">Road Tractors</h3>
+          <p class="text-gray-600 mb-4">Capacity: Up to 44,666 lbs</p>
+          <p class="text-gray-600 mb-4">Fuel Type: Diesel</p>
+          <p class="text-gray-600 mb-4">Safety Features: ABS, Lane Assist</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-4">Heavy Duty Trucks</h3>
+          <p class="text-gray-600 mb-4">Capacity: Up to 26,000 lbs</p>
+          <p class="text-gray-600 mb-4">Fuel Efficiency: 8 MPG</p>
+          <p class="text-gray-600 mb-4">Safety Features: Advanced Navigation Systems</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-4">Specialized Vehicles</h3>
+          <p class="text-gray-600 mb-4">Capacity: Custom Solutions</p>
+          <p class="text-gray-600 mb-4">Fuel Efficiency: Varies</p>
+          <p class="text-gray-600 mb-4">Safety Features: Custom Safety Systems</p>
+          <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 cursor-pointer">View Details</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Close mobile menu when a link is clicked
-  mobileMenu.addEventListener('click', function(event) {
-    if (event.target.tagName === 'A') {
-      mobileMenu.classList.remove('open');
-      mobileMenuButton.setAttribute('aria-expanded', 'false');
+  <!-- Fleet Management Features Section -->
+  <section id="fleet-management" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Fleet Management Features</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 flex items-center justify-center mb-6">
+            <i class="ri-map-pin-line text-4xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">GPS Tracking</h3>
+          <p class="text-gray-600">Real-time tracking of all vehicles in the fleet.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 flex items-center justify-center mb-6">
+            <i class="ri-route-line text-4xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Route Optimization</h3>
+          <p class="text-gray-600">Optimize routes for efficiency and cost savings.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 flex items-center justify-center mb-6">
+            <i class="ri-tools-line text-4xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Maintenance Scheduling</h3>
+          <p class="text-gray-600">Schedule and track maintenance for all vehicles.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-custom hover-scale" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-16 h-16 flex items-center justify-center mb-6">
+            <i class="ri-bar-chart-line text-4xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Performance Analytics</h3>
+          <p class="text-gray-600">Analyze fleet performance and identify areas for improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-secondary text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div>
+          <h3 class="text-xl font-semibold mb-6">About Us</h3>
+          <p class="text-gray-300">Wakamu Logistics is a leading provider of comprehensive logistics and supply chain solutions, dedicated to efficiently managing the intricacies of transportation and distribution for businesses across diverse industries.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
+            <li><a href="#fleet" class="text-gray-300 hover:text-white">Fleet</a></li>
+            <li><a href="#testimonials" class="text-gray-300 hover:text-white">Testimonials</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Newsletter</h3>
+          <p class="text-gray-300 mb-4">Subscribe to our newsletter for updates and news.</p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l focus:outline-none text-gray-800 w-full">
+            <button type="submit" class="bg-primary px-6 py-2 rounded-r text-white hover:bg-primary/90 transition duration-300">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+        <p class="text-gray-300">&copy; 2025 Wakamu Logistics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition duration-300 hidden">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Loading Spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', function() {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close Mobile Menu on Link Click
+    mobileMenu.addEventListener('click', function(event) {
+      if (event.target.tagName === 'A') {
+        mobileMenu.classList.remove('open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Active Link Highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    function setActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
     }
-  });
-
-  // Active link highlighting
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section');
-  function setActiveLink() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.pageYOffset >= sectionTop - 100) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').slice(1) === current) {
-        link.classList.add('active');
-      }
-    });
-  }
-  window.addEventListener('scroll', setActiveLink);
-  setActiveLink();
-});
-</script>
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+  </script>
 </body>
 </html>
