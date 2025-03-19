@@ -15,7 +15,7 @@
         extend: {
           colors: {
             primary: '#e79b23',
-            secondary: '#1a4d6e',
+            secondary: '#e79b23',
             gradientStart: '#FF6B6B',
             gradientEnd: '#3B82F6'
           },
@@ -91,9 +91,7 @@
           <a href="index.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Home</a>
           <a href="about.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">About Us</a>
           <a href="service.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Services</a>
-          <a href="fleet.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Fleet</a>
-          <a href="#testimonials" class="nav-link text-white hover:text-gray-200 cursor-pointer">Testimonials</a>
-          <a href="#contact" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
+          <a href="contact.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
         </div>
         <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
           <i class="ri-menu-line text-white text-2xl"></i>
@@ -105,16 +103,14 @@
           <a href="index.html" class="text-white hover:text-gray-200">Home</a>
           <a href="about.html" class="text-white hover:text-gray-200">About Us</a>
           <a href="service.html" class="text-white hover:text-gray-200">Services</a>
-          <a href="fleet.html" class="text-white hover:text-gray-200">Fleet</a>
-          <a href="#testimonials" class="text-white hover:text-gray-200">Testimonials</a>
-          <a href="#contact" class="text-white hover:text-gray-200">Contact</a>
+          <a href="contact.html" class="text-white hover:text-gray-200">Contact</a>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="about-hero" class="pt-16 relative min-h-screen flex items-center gradient-bg from-gradientStart to-gradientEnd">
+  <section id="about-hero" class="pt-16 relative min-h-screen flex items-center" style="background-image: url('static/about-us.jpg'); background-size: cover; background-position: center;">
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="container mx-auto px-6 relative z-10">
       <div class="max-w-3xl text-white text-center md:text-left" data-aos="fade-up" data-aos-duration="1000">
@@ -132,7 +128,8 @@
         <div data-aos="fade-up" data-aos-delay="100">
           <h2 class="text-3xl md:text-4xl font-bold mb-8">Company Overview</h2>
           <p class="text-gray-600 mb-6">Wakamu Logistics is a leading provider of comprehensive logistics and supply chain solutions, dedicated to efficiently managing the intricacies of transportation and distribution for businesses across diverse industries.</p>
-          <p class="text-gray-600 mb-6">With a foundation rooted in professionalism and operational excellence, Wakamu Logistics offers end-to-end logistics services, including freight forwarding, warehousing, transportation management, customs clearance, and supply chain consulting.</p>
+          <p class="text-gray-600 mb-6">With a foundation rooted in professionalism and operational excellence, Wakamu Logistics offers end-to-end logistics services, including freight forwarding, warehousing, transportation management, customs clearance, and supply chain consulting. Our unwavering focus on quality, safety, and cost-effective solutions ensures that our clients can streamline their distribution processes and optimize their supply chain management with confidence.</p>
+          <p class="text-gray-600 mb-6">As a forward-thinking logistics company, Wakamu Logistics leverages advanced technology, a robust network of partners, and a team of highly skilled professionals to deliver seamless and efficient logistics solutions tailored to the unique needs of each client. Our commitment to operational excellence, integrity, and continuous improvement enables us to exceed expectations and deliver impactful results in today’s dynamic and demanding business environment.</p>
         </div>
         <div data-aos="fade-up" data-aos-delay="200">
           <h2 class="text-3xl md:text-4xl font-bold mb-8">Mission & Values</h2>
@@ -168,156 +165,27 @@
     </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section id="timeline" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Journey</h2>
-      <div class="relative">
-        <div class="timeline-item absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary"></div>
-        <div class="space-y-12">
-          <div class="flex items-center justify-between" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-1/2 text-right pr-8">
-              <div class="text-2xl font-bold text-primary mb-4">1995</div>
-              <h3 class="text-xl font-bold mb-4">Founded</h3>
-              <p class="text-gray-600">Wakamu Logistics was established as a regional logistics provider.</p>
-            </div>
-            <div class="w-1/2"></div>
-          </div>
-          <div class="flex items-center justify-between" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-1/2"></div>
-            <div class="w-1/2 text-left pl-8">
-              <div class="text-2xl font-bold text-primary mb-4">2005</div>
-              <h3 class="text-xl font-bold mb-4">Global Expansion</h3>
-              <p class="text-gray-600">Expanded operations to over 20 countries.</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-between" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-1/2 text-right pr-8">
-              <div class="text-2xl font-bold text-primary mb-4">2015</div>
-              <h3 class="text-xl font-bold mb-4">Technology Integration</h3>
-              <p class="text-gray-600">Implemented advanced logistics technology for real-time tracking.</p>
-            </div>
-            <div class="w-1/2"></div>
-          </div>
-          <div class="flex items-center justify-between" data-aos="fade-up" data-aos-delay="400">
-            <div class="w-1/2"></div>
-            <div class="w-1/2 text-left pl-8">
-              <div class="text-2xl font-bold text-primary mb-4">2023</div>
-              <h3 class="text-xl font-bold mb-4">Sustainability Initiatives</h3>
-              <p class="text-gray-600">Launched eco-friendly logistics solutions.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Leadership Section -->
   <section id="leadership" class="py-20">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Leadership Team</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="100">
-          <img src="" alt="CEO" class="w-full h-64 object-cover">
+          <img src="static/silas.png" alt="CEO" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">Silas Marimo</h3>
             <p class="text-gray-600 mb-2">Chief Executive Officer</p>
-            <p class="text-gray-600 text-sm mb-4">An insightful and results-oriented entrepreneur with a proven ability to achieve and surpass revenue goals in high-paced multi-tasking environments.</p>
+            <p class="text-gray-600 text-sm mb-4">An insightful and results-oriented entrepreneur with a proven ability to achieve and surpass revenue goals in high-paced multi-tasking environments. Equipped with a Master of Business Administration Degree (MBA) in Finance, a Master of Science (MSc) Degree in Risk Management and Insurance, and a Bachelor of Commerce (Hons) Degree in Banking and Finance.</p>
             <a href="#" class="text-primary hover:text-primary/80"><i class="ri-linkedin-fill text-xl"></i></a>
           </div>
         </div>
         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="200">
-          <img src="" alt="COO" class="w-full h-64 object-cover">
+          <img src="static/tadiwa.png" alt="COO" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">Tadiwa</h3>
             <p class="text-gray-600 mb-2">Chief Operations Officer</p>
-            <p class="text-gray-600 text-sm mb-4">An upcoming entrepreneur with interests in tourism, hospitality, and logistics. Holds a BSc Honours in Mining Engineering.</p>
+            <p class="text-gray-600 text-sm mb-4">An upcoming entrepreneur with interests in tourism, hospitality, and logistics. Holds a BSc Honours in Mining Engineering and is currently an Executive Director at Waterlip, a company operating lodges in Juliasdale Nyanga.</p>
             <a href="#" class="text-primary hover:text-primary/80"><i class="ri-linkedin-fill text-xl"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Global Presence Section -->
-  <section id="global-presence" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Global Presence</h2>
-      <div class="relative h-[500px] bg-cover bg-center rounded-lg overflow-hidden mb-12" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')">
-        <div class="absolute inset-0 bg-black/20"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-4xl font-bold text-primary mb-2">45+</div>
-          <div class="text-gray-600">Distribution Centers</div>
-        </div>
-        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-4xl font-bold text-primary mb-2">120+</div>
-          <div class="text-gray-600">Countries</div>
-        </div>
-        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-4xl font-bold text-primary mb-2">250+</div>
-          <div class="text-gray-600">Global Partners</div>
-        </div>
-        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-          <div class="text-4xl font-bold text-primary mb-2">24/7</div>
-          <div class="text-gray-600">Support Coverage</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements" class="py-20">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Achievements & Recognition</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-lg shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-            <i class="ri-award-line text-primary text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Best Logistics Provider 2024</h3>
-          <p class="text-gray-600">Global Transport Awards</p>
-        </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-            <i class="ri-medal-line text-primary text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Sustainability Excellence</h3>
-          <p class="text-gray-600">Environmental Leadership Council</p>
-        </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-            <i class="ri-trophy-line text-primary text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Innovation Leader 2024</h3>
-          <p class="text-gray-600">Supply Chain Technology Awards</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Company Culture Section -->
-  <section id="company-culture" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Company Culture</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://public.readdy.ai/ai/img_res/8f7ff9f2dd23c84942a326b23edcc5ed.jpg" alt="Team Event" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <p class="text-gray-600">Our team celebrating a successful project completion.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://public.readdy.ai/ai/img_res/e22560fcb0385d7b3395987beb739bae.jpg" alt="Facility" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <p class="text-gray-600">State-of-the-art warehousing facility.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://public.readdy.ai/ai/img_res/46820b3702f2fd508fdaecbd7e9fd848.jpg" alt="Training" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <p class="text-gray-600">Employee training and development programs.</p>
           </div>
         </div>
       </div>
@@ -338,8 +206,6 @@
             <li><a href="index.html" class="text-gray-300 hover:text-white">Home</a></li>
             <li><a href="about.html" class="text-gray-300 hover:text-white">About Us</a></li>
             <li><a href="service.html" class="text-gray-300 hover:text-white">Services</a></li>
-            <li><a href="fleet.html" class="text-gray-300 hover:text-white">Fleet</a></li>
-            <li><a href="#testimonials" class="text-gray-300 hover:text-white">Testimonials</a></li>
             <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
           </ul>
         </div>
