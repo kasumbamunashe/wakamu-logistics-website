@@ -15,7 +15,7 @@
         extend: {
           colors: {
             primary: '#e79b23', // Orange
-            secondary: '#1a4d6e', // Dark Blue
+            secondary: '#e79b23', // Orange
             gradientStart: '#FF6B6B', // Gradient Start
             gradientEnd: '#3B82F6', // Gradient End
             light: '#f8f9fa', // Light background
@@ -77,31 +77,35 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-primary z-50 shadow-md">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="text-white text-2xl font-bold">Wakamu Logistics</div>
-        <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Home</a>
-          <a href="about.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">About Us</a>
-          <a href="service.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Services</a>
-          <a href="contact.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
-        </div>
-        <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
-          <i class="ri-menu-line text-white text-2xl"></i>
-        </button>
+  <!-- Navigation -->
+<nav class="fixed top-0 w-full bg-primary z-50">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Company Logo -->
+      <div class="flex items-center">
+        <img src="static/logo.png" alt="Wakamu Logistics Logo" class="h-10"> <!-- Adjust height as needed -->
       </div>
-      <!-- Mobile Menu -->
-      <div class="mobile-menu mt-4" id="mobile-menu">
-        <div class="flex flex-col space-y-4">
-          <a href="index.html" class="text-white hover:text-gray-200">Home</a>
-          <a href="about.html" class="text-white hover:text-gray-200">About Us</a>
-          <a href="service.html" class="text-white hover:text-gray-200">Services</a>
-          <a href="contact.html" class="text-white hover:text-gray-200">Contact</a>
-        </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">About Us</a>
+        <a href="service.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Services</a>
+        <a href="contact.html" class="nav-link text-white hover:text-gray-200 cursor-pointer">Contact</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="ri-menu-line text-white text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu mt-4" id="mobile-menu">
+      <div class="flex flex-col space-y-4">
+        <a href="index.html" class="text-white hover:text-gray-200">Home</a>
+        <a href="about.html" class="text-white hover:text-gray-200">About Us</a>
+        <a href="service.html" class="text-white hover:text-gray-200">Services</a>
+        <a href="contact.html" class="text-white hover:text-gray-200">Contact</a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
  <!-- Hero Section -->
 <section id="contact-hero" class="pt-16 relative min-h-screen flex items-center" style="background-image: url('static/contact-us.jpg'); background-size: cover; background-position: center;">
   <div class="absolute inset-0 bg-black/50"></div>
@@ -183,6 +187,7 @@
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
+          <img src="static/logo.png" alt="Wakamu Logistics Logo" class="h-10 mb-6">
           <h3 class="text-xl font-semibold mb-6">About Us</h3>
           <p class="text-gray-300">Wakamu Logistics is a leading provider of comprehensive logistics and supply chain solutions, dedicated to efficiently managing the intricacies of transportation and distribution for businesses across diverse industries.</p>
         </div>
@@ -190,9 +195,9 @@
           <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
           <ul class="space-y-3">
             <li><a href="index.html" class="text-gray-300 hover:text-white">Home</a></li>
-            <li><a href="about.html" class="text-gray-300 hover:text-white">About Us</a></li>
-            <li><a href="service.html" class="text-gray-300 hover:text-white">Services</a></li>
-            <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+            <li><a href="services.html" class="text-gray-300 hover:text-white">Services</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white">About us</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
           </ul>
         </div>
         <div>
